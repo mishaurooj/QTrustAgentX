@@ -203,14 +203,6 @@ python qtrustagentx_final_pipeline.py --mode all
 
 ---
 
-# Result Figures
-
-## Architecture
-
-<p align="center">
-<img src="qtrustagentx_architecture_1080p.png" width="90%">
-</p>
-
 ## Agent Evidence Analysis
 
 <p align="center">
