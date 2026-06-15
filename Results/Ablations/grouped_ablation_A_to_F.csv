@@ -1,0 +1,31 @@
+perspective,ablation,variant,source_experiment,accuracy,precision,recall,f1,auc,train_time_sec,what_it_tests
+A. Agentic Orchestration,A1,Single URL specialist,URL_QuantumGraph_Agent,0.6933508311461067,0.7386609071274298,0.5984251968503937,0.6611889801836636,0.811182066808578,1.4249,Single specialist evidence agent
+A. Agentic Orchestration,A2,Single SMS specialist,SMS_QuantumText_Agent,0.6298200514138818,0.2238095238095238,0.47,0.3032258064516129,0.5822595656670114,2.5595,Single specialist evidence agent
+A. Agentic Orchestration,A3,Single Email specialist,EMAIL_QuantumText_Agent,0.6012526096033403,0.3507853403141361,0.5,0.4123076923076923,0.6061648280337444,4.1702,Single specialist evidence agent
+A. Agentic Orchestration,A4,Single QR specialist,QR_ResNet18_Agent,0.9995,0.9995,0.9995,0.9995,0.999999,19408.9229,Single specialist evidence agent
+A. Agentic Orchestration,A5,Agentic majority baseline,Agentic_MajorityVote_Baseline,0.757436112274822,0.7356426618049225,0.7363138686131386,0.7359781121751026,0.8663727546687623,0.0273,Simple arbitration baseline
+A. Agentic Orchestration,A6,Agentic risk arbitration,Agentic_RiskArbitration_X,0.7712609970674487,0.7425044091710759,0.7682481751824818,0.7551569506726458,0.8852524071760135,0.5226,Agentic decision arbitration
+A. Agentic Orchestration,A7,Agentic quantum arbitration,Agentic_QuantumArbitration_X,0.7712609970674487,0.7105666156202144,0.8467153284671532,0.7726894254787677,0.8852117692955725,0.2043,Quantum arbitration over agent evidence
+B. Quantum-Graph Reasoning,B1,URL baseline RF,URL_RF_Baseline,0.9619422572178478,0.9575389948006932,0.9667541557305336,0.9621245102307358,0.993641925555456,0.6416,"No graph, no quantum"
+B. Quantum-Graph Reasoning,B2,URL graph only,URL_NoQuantum_GraphOnly,0.9619422572178478,0.9623467600700524,0.9615048118985128,0.9619256017505472,0.9931007639793058,1.1175,Trust-graph interactions without quantum mapping
+B. Quantum-Graph Reasoning,B3,URL quantum only,URL_NoGraph_QuantumOnly,0.9015748031496064,0.872564935064935,0.9405074365704288,0.9052631578947368,0.9675398733513516,1.5827,Quantum mapping without graph interactions
+B. Quantum-Graph Reasoning,B4,URL quantum graph,URL_QuantumGraph_Agent,0.6933508311461067,0.7386609071274298,0.5984251968503937,0.6611889801836636,0.811182066808578,1.4249,Combined quantum graph encoder
+B. Quantum-Graph Reasoning,B5,SMS compressed no quantum,SMS_NoQuantum_TextOnly,0.9768637532133676,0.9219512195121952,0.945,0.9333333333333332,0.990651499482937,2.3672,Semantic compression only
+B. Quantum-Graph Reasoning,B6,SMS quantum text,SMS_QuantumText_Agent,0.6298200514138818,0.2238095238095238,0.47,0.3032258064516129,0.5822595656670114,2.5595,Quantum text map
+B. Quantum-Graph Reasoning,B7,Email compressed no quantum,EMAIL_NoQuantum_TextOnly,0.9958246346555324,0.9925373134328358,0.9925373134328358,0.9925373134328358,0.999718797317759,4.087,Semantic compression only
+B. Quantum-Graph Reasoning,B8,Email quantum text,EMAIL_QuantumText_Agent,0.6012526096033403,0.3507853403141361,0.5,0.4123076923076923,0.6061648280337444,4.1702,Quantum text map
+C. Modality Contribution,C1,URL channel,URL_QuantumGraph_Agent,0.6933508311461067,0.7386609071274298,0.5984251968503937,0.6611889801836636,0.811182066808578,1.4249,URL/domain evidence
+C. Modality Contribution,C2,SMS channel,SMS_QuantumText_Agent,0.6298200514138818,0.2238095238095238,0.47,0.3032258064516129,0.5822595656670114,2.5595,Smishing evidence
+C. Modality Contribution,C3,Email channel,EMAIL_QuantumText_Agent,0.6012526096033403,0.3507853403141361,0.5,0.4123076923076923,0.6061648280337444,4.1702,Human and LLM email evidence
+C. Modality Contribution,C4,QR channel,QR_ResNet18_Agent,0.9995,0.9995,0.9995,0.9995,0.999999,19408.9229,QR image evidence
+C. Modality Contribution,C5,QR handcrafted,QR_Handcrafted_Quantum,0.547,0.5486039296794208,0.5305,0.5394001016776817,0.57380375,0.2401,QR structural evidence without CNN
+D. Human-vs-LLM Generalization,D1,Email quantum text on human,EMAIL_QuantumText_Agent,0.6101694915254238,0.5670103092783505,0.5238095238095238,0.5445544554455446,0.6413667757179207,4.1702,Generalization on human-generated email evidence
+D. Human-vs-LLM Generalization,D2,Email quantum text on llm,EMAIL_QuantumText_Agent,0.5925925925925926,0.1276595744680851,0.4137931034482758,0.1951219512195122,0.542700612310667,4.1702,Generalization on llm-generated email evidence
+E. Robustness to Poisoned Evidence,E5,5% evidence poisoning,agent_evidence_scores,0.7141300703989273,0.6862603678326722,0.6949059704217637,0.6905561099519187,0.8111746650700549,,Risk-score stability under misleading modality evidence
+E. Robustness to Poisoned Evidence,E10,10% evidence poisoning,agent_evidence_scores,0.6909151860543078,0.6604484304932735,0.6722658389629359,0.666304741223308,0.7751736400102562,,Risk-score stability under misleading modality evidence
+E. Robustness to Poisoned Evidence,E20,20% evidence poisoning,agent_evidence_scores,0.6404626215219578,0.6038858743217224,0.6299068833302903,0.6166219839142091,0.7061885439667637,,Risk-score stability under misleading modality evidence
+E. Robustness to Poisoned Evidence,E30,30% evidence poisoning,agent_evidence_scores,0.5987261146496815,0.5588989570866815,0.5968595946686142,0.5772558714462299,0.6400400406912534,,Risk-score stability under misleading modality evidence
+F. Explainability Faithfulness,F-email,High-confidence explanation reliability: email,agent_evidence_scores,0.7333333333333333,,,,,,Whether high-confidence evidence explanations align with correct predictions
+F. Explainability Faithfulness,F-qr,High-confidence explanation reliability: qr,agent_evidence_scores,1.0,,,,,,Whether high-confidence evidence explanations align with correct predictions
+F. Explainability Faithfulness,F-sms,High-confidence explanation reliability: sms,agent_evidence_scores,0.684931506849315,,,,,,Whether high-confidence evidence explanations align with correct predictions
+F. Explainability Faithfulness,F-url,High-confidence explanation reliability: url,agent_evidence_scores,0.9878472222222222,,,,,,Whether high-confidence evidence explanations align with correct predictions
