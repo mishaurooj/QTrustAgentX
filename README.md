@@ -1,22 +1,68 @@
+
+
+
 # QTrustAgentX
 
-> Explainable Multi-Channel Phishing Detection Through Agentic Decision Arbitration, Quantum-Inspired Representation Learning, and Trust Graph Modeling
+# Explainable Multi-Channel Phishing Detection Through Agentic Decision Arbitration, Quantum-Inspired Representation Learning, and Trust Graph Modeling
 
-Official repository containing the source code, reorganized datasets, trained models, figures, and reproducible experiments.
+Official implementation of the IEEE Open Journal of the Computer Society paper.
 
-## Repository Structure
+---
 
-```text
-QTrustAgentX/
-├── Code/
-├── Dataset/
-├── Results/
-├── qtrustagentx_architecture_1080p.png
-├── LICENSE
-└── README.md
-```
+# Abstract
 
-# Architecture
+Phishing attacks increasingly exploit URLs, emails, SMS messages, QR codes, and AI-generated content, which limits the effectiveness of single-channel detectors and static rule-based systems. QTrustAgentX introduces an explainable multi-channel phishing detection framework that integrates modality-specific agents, semantic compression, quantum-inspired representation learning, trust graph reasoning, and risk-aware decision arbitration. Experiments demonstrate strong modality performance, including an F1-score of 0.9995 for QR analysis, 0.9925 for semantic email compression, and 0.9621 for URL detection. The framework remains stable under progressively poisoned evidence and produces interpretable modality contribution scores suitable for deployment in email gateways, browser security extensions, secure messaging platforms, and enterprise phishing monitoring systems.
+
+---
+
+# Research Motivation
+
+Modern phishing campaigns rarely rely on a single communication channel. Attackers increasingly combine:
+
+- Malicious URLs
+- AI-generated phishing emails
+- SMS smishing campaigns
+- QR-code phishing attacks
+- Multi-stage social engineering attacks
+
+Existing phishing detectors generally focus on only one modality and cannot reason over conflicting evidence originating from heterogeneous communication channels.
+
+---
+
+# Research Gaps
+
+Current phishing detection literature exhibits several limitations:
+
+- Single-modality learning
+- Limited cross-channel reasoning
+- Lack of adaptive decision arbitration
+- Limited explainability
+- Minimal robustness analysis
+- Limited evaluation against AI-generated phishing attacks
+- Absence of unified multi-agent architectures
+
+---
+
+# Literature Comparison
+
+| Study | Multimodal | Agentic AI | Graph Reasoning | Quantum Inspired | Explainable |
+|-------|------------|------------|-----------------|-----------------|-------------|
+| Wang and Gonsalves | ✓ | ✗ | ✗ | ✗ | Partial |
+| Kavya and Sumathi | ✓ | ✗ | ✓ | ✗ | ✗ |
+| Chen et al. | ✓ | ✗ | ✗ | ✗ | ✗ |
+| Khandan et al. | ✓ | ✗ | ✗ | ✗ | ✓ |
+| Vijetha | ✗ | ✓ | Partial | ✗ | Partial |
+| Proposed QTrustAgentX | ✓ | ✓ | ✓ | ✓ | ✓ |
+
+---
+
+# Proposed Architecture
+
+<p align="center">
+<img src="qtrustagentx_architecture_1080p.png" width="100%">
+</p>
+
+QTrustAgentX consists of:
 
 1. Input Orchestration Agent
 2. URL Analysis Agent
@@ -28,15 +74,35 @@ QTrustAgentX/
 8. Trust Graph Reasoning Agent
 9. Risk Arbitration and Explanation Agent
 
-# Novel Contributions
+---
 
-- Multi-channel phishing detection across URL, Email, SMS, and QR modalities
+# Key Contributions
+
+- Unified phishing detection across URLs, emails, SMS messages, and QR codes
 - Agentic decision arbitration
-- Quantum-inspired representation learning
+- Quantum-inspired nonlinear feature learning
 - Trust graph reasoning
-- Explainable modality contribution scoring
-- Robustness evaluation under poisoned evidence
-- Human versus LLM phishing generalization analysis
+- Explainable modality attribution
+- Robustness analysis under poisoned evidence
+- Evaluation against human-generated and LLM-generated phishing attacks
+
+---
+
+# Repository Structure
+
+```text
+QTrustAgentX/
+│
+├── Code/
+├── Dataset/
+├── Results/
+├── qtrustagentx_architecture_1080p.png
+├── qtrustagentx_agent_evidence_analysis.png
+├── README.md
+└── LICENSE
+```
+
+---
 
 # Dataset Summary
 
@@ -57,7 +123,33 @@ QR corpus:
 - 100,000 benign QR images
 - 100,000 malicious QR images
 
-# Conda Setup
+# Dataset Statistics
+
+| Dataset | Samples | Features |
+|---------|---------:|---------:|
+| URL Phishing Dataset | 11,430 | 89 |
+| SMS Phishing Dataset | 5,971 | 5 |
+| Human Legitimate Emails | 1,000 | 7 |
+| Human Phishing Emails | 1,000 | 7 |
+| LLM Legitimate Emails | 1,000 | 2 |
+| LLM Phishing Emails | 595 | 2 |
+| QR Benign Images | 100,000 | Images |
+| QR Malicious Images | 100,000 | Images |
+
+---
+
+# Dataset Quality Report
+
+| Dataset | Duplicates | Missing Values |
+|---------|------------:|---------------:|
+| SMS Phishing | 17 | 0 |
+| Human Phishing Emails | 496 | 24 |
+| LLM Phishing Emails | 429 | 631 |
+| SMS Spam Raw | 403 | 16,648 |
+
+---
+
+# Environment Setup
 
 ```bash
 conda create -n qtrustagentx python=3.11 -y
@@ -68,58 +160,73 @@ pip install pillow tqdm openpyxl joblib networkx shap lime
 pip install torch torchvision torchaudio
 ```
 
-# Running the Code
+---
+
+# Reproducing the Paper
+
+Dataset preparation:
 
 ```bash
 python reorganize_dataset.py
 python profile_reorganized_dataset.py
 python deep_dataset_inspector.py
 python inspect_datasets.py
-python qtrustagentx_final_pipeline.py --mode all --qr_limit 20000 --qr_epochs 10
 ```
 
-# Generated Results
+Run complete experiments:
 
-Running the full pipeline generates:
+```bash
+python qtrustagentx_final_pipeline.py --mode all
+```
 
-- Dataset profiles
-- Train, validation, and test splits
-- Trained models
-- CSV result tables
-- ROC curves
-- Confusion matrices
-- Ablation studies
-- Explainability reports
-- Figures for the paper
+---
 
-# Main Results
+# Main Experimental Results
 
-| Experiment | Best F1 |
-|------------|---------:|
-| QR Specialist | 0.9995 |
-| Email Compression | 0.9925 |
-| URL Detection | 0.9621 |
-| Quantum Arbitration | 0.7727 |
-| Majority Voting | 0.7360 |
+| Experiment | Accuracy | F1 | AUC |
+|------------|----------:|---:|----:|
+| QR Specialist | 0.9995 | 0.9995 | 1.0000 |
+| Email Compression | 0.9958 | 0.9925 | 0.9997 |
+| URL Detection | 0.9619 | 0.9621 | 0.9936 |
+| Quantum Arbitration | 0.7713 | 0.7727 | 0.8852 |
+
+---
 
 # Ablation Studies
 
-A. Agentic Orchestration  
-B. Quantum and Graph Reasoning  
-C. Modality Contribution  
-D. Human vs LLM Generalization  
-E. Robustness to Poisoned Evidence  
-F. Explainability Faithfulness
+### Agentic Orchestration
+### Quantum and Graph Reasoning
+### Modality Contribution
+### Human vs LLM Generalization
+### Robustness to Poisoned Evidence
+### Explainability Faithfulness
 
-# Figures Included
+---
 
-- QTrustAgentX architecture diagram
-- Agent evidence analysis
+# Result Figures
+
+## Architecture
+
+<p align="center">
+<img src="qtrustagentx_architecture_1080p.png" width="90%">
+</p>
+
+## Agent Evidence Analysis
+
+<p align="center">
+<img src="qtrustagentx_agent_evidence_analysis_1x3_clean.png" width="100%">
+</p>
+
+## Additional Results
+
 - ROC curves
 - Confusion matrices
 - Modality contribution plots
-- Robustness analysis figures
+- Poisoned evidence robustness plots
 - Explainability figures
+- Agent reliability plots
+
+---
 
 # Citation
 
@@ -132,6 +239,18 @@ F. Explainability Faithfulness
 }
 ```
 
+---
+
 # License
 
 Apache License 2.0
+
+---
+
+# Contact
+
+Misha Urooj Khan  
+European Organization for Nuclear Research (CERN), Geneva, Switzerland
+
+Research Interests:
+Artificial Intelligence, Quantum Machine Learning, Cybersecurity, Generative AI, Large Language Models, Deep Learning, IoT, and Autonomous Systems.
