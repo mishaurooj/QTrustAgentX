@@ -87,13 +87,15 @@ QTrustAgentX consists of:
 - Evaluation against human-generated and LLM-generated phishing attacks
 
 ---
-# QTrustAgentX Industrial GUI Application
+## QTrustAgentX Industrial GUI Application
 
-# Live Application Demo
+The repository includes an interactive Streamlit application that demonstrates the proposed QTrustAgentX system in an analyst-friendly interface. The app supports URL, email, SMS, and QR evidence input, then displays specialist agent scores, trust-graph agreement, quantum arbitration output, explainability reason codes, recommended response actions, and a downloadable incident report.
+
+### Live Application Demo
 
 <p align="center">
-<a href="./qtrustagentx_app_video.mp4">
-<img src="./q1.png" width="900">
+<a href="./GUIApp/qtrustagentx_app_video.mp4">
+<img src="./GUIApp/q1.png" width="900">
 </a>
 </p>
 
@@ -101,64 +103,20 @@ QTrustAgentX consists of:
 Click the image above to watch the application demo video.
 </p>
 
-**Direct Video Download:** [qtrustagentx_app_video.mp4](./qtrustagentx_app_video.mp4)
-# Application Screens
-
-## Dashboard
-
-<p align="center">
-<img src="./q1.png" width="900">
-</p>
-
-The dashboard allows analysts to submit URLs, emails, SMS messages, and QR images for inspection.
+**Direct Video Download:** [qtrustagentx_app_video.mp4](./GUIApp/qtrustagentx_app_video.mp4)
 
 ---
 
-## Agent Evidence Analysis
+### Run the GUI Application
 
-<p align="center">
-<img src="./q2.png" width="900">
-</p>
+```bash
+conda create -n qtrustagentx_app python=3.11 -y
+conda activate qtrustagentx_app
 
-The system displays:
+pip install streamlit pandas numpy scikit-learn plotly pillow torch torchvision joblib
 
-- Risk gauge
-- Agent confidence
-- Specialist predictions
-- Arbitration score
-
----
-
-## Trust Graph and Explainability
-
-<p align="center">
-<img src="./q3.png" width="900">
-</p>
-
-The interface visualizes:
-
-- Agent agreement matrix
-- Modality contribution
-- Reason codes
-- Threat explanations
-
----
-
-## Incident Response and Reporting
-
-<p align="center">
-<img src="./q4.png" width="900">
-</p>
-
-The application generates:
-
-- Final verdict
-- Risk category
-- Response recommendations
-- JSON incident reports
-- Analyst-ready summaries
-
----
+cd GUIApp
+streamlit run qtrustagentx_app.py
 ---
 # Repository Structure
 
