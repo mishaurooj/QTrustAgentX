@@ -87,7 +87,79 @@ QTrustAgentX consists of:
 - Evaluation against human-generated and LLM-generated phishing attacks
 
 ---
+# QTrustAgentX Industrial GUI Application
 
+# Live Application Demo
+
+<p align="center">
+<a href="./qtrustagentx_app_video.mp4">
+<img src="./q1.png" width="900">
+</a>
+</p>
+
+<p align="center">
+Click the image above to watch the application demo video.
+</p>
+
+**Direct Video Download:** [qtrustagentx_app_video.mp4](./qtrustagentx_app_video.mp4)
+# Application Screens
+
+## Dashboard
+
+<p align="center">
+<img src="./q1.png" width="900">
+</p>
+
+The dashboard allows analysts to submit URLs, emails, SMS messages, and QR images for inspection.
+
+---
+
+## Agent Evidence Analysis
+
+<p align="center">
+<img src="./q2.png" width="900">
+</p>
+
+The system displays:
+
+- Risk gauge
+- Agent confidence
+- Specialist predictions
+- Arbitration score
+
+---
+
+## Trust Graph and Explainability
+
+<p align="center">
+<img src="./q3.png" width="900">
+</p>
+
+The interface visualizes:
+
+- Agent agreement matrix
+- Modality contribution
+- Reason codes
+- Threat explanations
+
+---
+
+## Incident Response and Reporting
+
+<p align="center">
+<img src="./q4.png" width="900">
+</p>
+
+The application generates:
+
+- Final verdict
+- Risk category
+- Response recommendations
+- JSON incident reports
+- Analyst-ready summaries
+
+---
+---
 # Repository Structure
 
 ```text
