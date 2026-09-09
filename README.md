@@ -6,7 +6,12 @@ TrustAgent-X is a heterogeneous phishing-detection framework that combines modal
 
 ## Proposed Architecture
 
-![TrustAgent-X architecture](./TrustAgentX_architecture.jpg)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mishaurooj/QTrustAgentX/main/TrustAgentX_architecture.jpg"
+       alt="TrustAgent-X proposed architecture"
+       width="100%">
+</p>
+
 
 ## Main Contributions
 
