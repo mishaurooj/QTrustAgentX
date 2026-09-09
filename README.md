@@ -6,7 +6,7 @@ TrustAgent-X is a heterogeneous phishing-detection framework that combines modal
 
 ## Proposed Architecture
 
-![TrustAgent-X architecture](TrustAgentX_architecture.jpg)
+![TrustAgent-X architecture](./TrustAgentX_architecture.jpg)
 
 ## Main Contributions
 
@@ -19,19 +19,11 @@ TrustAgent-X is a heterogeneous phishing-detection framework that combines modal
 
 ## Model and Ablation Variants
 
-![V0-V9C model and ablation variants](FINAL_V0_V9C_blue_white_clean_no_overlap.jpg)
+![V0-V9C model and ablation variants](./FINAL_V0_V9C_blue_white_clean_no_overlap.jpg)
 
 ## Evaluation Scope
 
-The reported quantum experiments use Qiskit Statevector simulation rather than quantum hardware. In the DISJOINT evaluation corpus, each empirical row contains one observed modality, so pair-dependent quantum interactions are inactive during predictive evaluation. The results therefore support reliability-aware quantum evidence arbitration, but do not establish quantum advantage or an empirical entanglement benefit.
-
-## Repository Contents
-
-- `Code/` — training, arbitration, ablation, robustness, and analysis scripts.
-- `Dataset/` — dataset organization and supporting data resources.
-- `GUIApp/` — graphical application prototype.
-- `TrustAgentX_architecture.jpg` — proposed system architecture.
-- `FINAL_V0_V9C_blue_white_clean_no_overlap.jpg` — V0-V9C control and ablation overview.
+The reported quantum experiments use Qiskit Statevector simulation. In the DISJOINT evaluation corpus, each empirical row contains one observed modality. The results support reliability-aware quantum evidence arbitration, but do not establish quantum advantage or an empirical entanglement benefit.
 
 ## License
 
