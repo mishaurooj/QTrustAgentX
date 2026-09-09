@@ -28,6 +28,7 @@ TrustAgent-X is a heterogeneous phishing-detection framework that combines modal
        alt="TrustAgent-X V0-V9C model and ablation variants"
        width="100%">
 </p>
+
 ## Evaluation Scope
 
 The reported quantum experiments use Qiskit Statevector simulation. In the DISJOINT evaluation corpus, each empirical row contains one observed modality. The results support reliability-aware quantum evidence arbitration, but do not establish quantum advantage or an empirical entanglement benefit.
