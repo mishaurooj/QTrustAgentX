@@ -1,0 +1,18 @@
+name: qtrust_validation
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy>=1.26
+  - pandas>=2.1
+  - scipy>=1.11
+  - scikit-learn>=1.4
+  - matplotlib>=3.8
+  - pillow>=10
+  - joblib>=1.3
+  - pytorch>=2.2
+  - tabulate
+  - pip
+  - pip:
+      - qiskit>=1.3

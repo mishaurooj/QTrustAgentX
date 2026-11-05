@@ -1,0 +1,38 @@
+{
+  "data/multimodal_31_combinations_1000_each.csv": {
+    "sha256": "55929854d600048cc334d9c5e45df4b7929070f27b06b9007804c2022a31c230",
+    "bytes": 33190720
+  },
+  "data/dataset_audit.json": {
+    "sha256": "524f0e8f0b76c361075549872e1b8417750543f23141bfe126827a5234d27c43",
+    "bytes": 5007
+  },
+  "data/DATASET_31_COMBINATIONS_AND_SPLITS.csv": {
+    "sha256": "7ad068875f135d28b6472aab3d221a6ab668f7db44b1e2e5b5520ce87c4104d3",
+    "bytes": 1261
+  },
+  "data/experiment/model_comparison_metrics.csv": {
+    "sha256": "402b03d40e4d687ef1c5171b40fd8a1b41e8a472029cce8cfdab8a0509f23302",
+    "bytes": 1443
+  },
+  "data/experiment/ABLATION_02_all_31_combinations.csv": {
+    "sha256": "6bd7098de2af253320fa7aea9bd59988ef292690499ea6fc119bbb91bb427f13",
+    "bytes": 5967
+  },
+  "data/experiment/ABLATION_05_frozen_model_leave_one_modality_out.csv": {
+    "sha256": "a6e8719ee83aacda731b388e6f28820bf68042d0d3bf3a9bee47f8491a954cec",
+    "bytes": 922
+  },
+  "data/experiment/ORIGINAL_FOUR_QUBIT_ABLATION.csv": {
+    "sha256": "866710d0ee514354c9d9bd7034348221501bc5faae13f3269a08c23c6f96f552",
+    "bytes": 508
+  },
+  "data/experiment/original_manuscript_4qubit.qasm": {
+    "sha256": "ba399595649f484bd015aaf74a06a1bad754ef9010654b4f52985e186e246564",
+    "bytes": 1003
+  },
+  "data/experiment/extended_five_modality_5qubit.qasm": {
+    "sha256": "2258d0577cbfe75dc77f1d82929bbe5e4e9131f2e2d1b42a86023d07f84eac08",
+    "bytes": 1362
+  }
+}
